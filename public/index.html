@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f766e" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon-192.png" />
+    <title>LexiDeck – Učení slovíček</title>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="file-picker">
+        <label for="fileInput" class="btn">Nahrát Excel (.xlsx)</label>
+        <input id="fileInput" type="file" accept=".xlsx" />
+      </div>
+      <div class="sheet-select">
+        <label for="sheetSelect">List:</label>
+        <select id="sheetSelect"></select>
+        <button id="resetBtn" class="btn btn-secondary">Resetovat pokrok listu</button>
+        <button id="loadSampleBtn" class="btn btn-secondary">Načíst sample.xlsx</button>
+        <button id="installBtn" class="btn btn-secondary" style="display:none">Instalovat aplikaci</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="message" class="message"></div>
+      <section class="card-area">
+        <div id="card" class="card">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="word" id="word"></div>
+              <button id="playBtn" class="play">▶︎ Výslovnost</button>
+            </div>
+            <div class="card-face card-back">
+              <div class="translation" id="translation"></div>
+              <a id="translateLink" class="ext-link" href="#" target="_blank" rel="noopener noreferrer">Otevřít v Google Translate</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="knewBtn" class="btn btn-primary">Věděl jsem (1)</button>
+        <button id="didntKnowBtn" class="btn btn-danger">Nevěděl (2)</button>
+      </section>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="system-check" id="systemCheck">
+        <h3>Kontrola systému</h3>
+        <button id="runCheckBtn" class="btn">Spustit kontrolu</button>
+        <div id="checkResults"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>
+        Tipy: mezerník = otočit, 1 = Věděl, 2 = Nevěděl, P = Výslovnost
+      </small>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+  </html>

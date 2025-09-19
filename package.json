@@ -1,0 +1,41 @@
+{
+  "name": "lexideck",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --host --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 5173 --host --strictPort",
+    "serve": "vite preview --port 5173 --host --strictPort",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "generate:sample": "node scripts/generate-sample.js",
+    "generate:icons": "node scripts/generate-icons.js",
+    "cert": "node scripts/generate-cert.js",
+    "e2e": "node scripts/pw-smoke.js",
+    "puppeteer": "node scripts/puppeteer-smoke.js",
+    "check": "npm run lint && npm run test && npm run e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "playwright": "^1.48.0",
+    "pngjs": "^7.0.0",
+    "prettier": "^3.3.3",
+    "puppeteer": "^23.4.1",
+    "vite": "^5.4.1",
+    "vitest": "^2.0.5",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "selfsigned": "^2.4.1"
+  }
+}
